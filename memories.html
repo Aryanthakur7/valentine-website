@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Universe 💖</title>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      overflow:hidden;
+      background: radial-gradient(circle at center, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    #uploadBtn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: none;
+      background: #ff4b5c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,75,92,0.8);
+      transition: 0.3s;
+    }
+
+    #uploadBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255,75,92,1);
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      animation: floatUp 7s linear forwards;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity:1; }
+      100% { transform: translateY(-110vh); opacity:0; }
+    }
+
+    #imageModal {
+      position: fixed;
+      inset:0;
+      background: rgba(0,0,0,0.8);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:20;
+    }
+
+    #imageModal img {
+      max-width:80%;
+      max-height:80%;
+      border-radius:20px;
+      box-shadow:0 0 40px white;
+    }
+  </style>
+</head>
+<body>
+
+<button id="uploadBtn">Upload Memories 💖</button>
+<input type="file" id="fileInput" multiple hidden>
+
+<div id="imageModal">
+  <img id="modalImg">
+</div>
+
+<!-- ONLY ONE AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/sphere.js"></script>
+
+</body>
+</html>
